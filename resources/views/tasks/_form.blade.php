@@ -1,32 +1,32 @@
-<div class="mb-3">
-    <label class="form-label">Task Name</label>
+<div style="margin-bottom: 15px;">
+    <label>Task Name</label><br>
     <input type="text" name="task_name"
-           class="form-control @error('task_name') is-invalid @enderror"
+           style="width: 100%; padding: 8px; margin-top: 5px;"
            value="{{ old('task_name', $task->task_name ?? '') }}">
     @error('task_name')
-        <div class="invalid-feedback">{{ $message }}</div>
+        <div style="color: red; font-size: 13px;">{{ $message }}</div>
     @enderror
 </div>
 
-<div class="mb-3">
-    <label class="form-label">Description</label>
+<div style="margin-bottom: 15px;">
+    <label>Description</label><br>
     <textarea name="description" rows="3"
-              class="form-control">{{ old('description', $task->description ?? '') }}</textarea>
+              style="width: 100%; padding: 8px; margin-top: 5px;">{{ old('description', $task->description ?? '') }}</textarea>
 </div>
 
-<div class="mb-3">
-    <label class="form-label">Due Date</label>
+<div style="margin-bottom: 15px;">
+    <label>Due Date</label><br>
     <input type="date" name="due_date"
-           class="form-control @error('due_date') is-invalid @enderror"
+           style="width: 100%; padding: 8px; margin-top: 5px;"
            value="{{ old('due_date', isset($task) ? $task->due_date->format('Y-m-d') : '') }}">
     @error('due_date')
-        <div class="invalid-feedback">{{ $message }}</div>
+        <div style="color: red; font-size: 13px;">{{ $message }}</div>
     @enderror
 </div>
 
-<div class="mb-3">
-    <label class="form-label">Status</label>
-    <select name="status" class="form-select">
+<div style="margin-bottom: 15px;">
+    <label>Status</label><br>
+    <select name="status" style="width: 100%; padding: 8px; margin-top: 5px;">
         @foreach (['Pending', 'Completed'] as $s)
             <option value="{{ $s }}"
                 {{ old('status', $task->status ?? 'Pending') == $s ? 'selected' : '' }}>

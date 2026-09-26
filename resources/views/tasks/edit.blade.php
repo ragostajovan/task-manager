@@ -6,7 +6,7 @@
         @csrf
         @method('PUT')
         @include('tasks._form')
-        <button type="submit" class="btn btn-primary">Update</button>
-        <a href="{{ route('tasks.index') }}" class="btn btn-secondary">Cancel</a>
+        <button type="submit" class="btn btn-blue">Update</button>
+        <a href="{{ route('tasks.index') }}" class="btn btn-gray">Cancel</a>
     </form>
 @endsection
